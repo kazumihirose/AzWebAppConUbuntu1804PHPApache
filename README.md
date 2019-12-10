@@ -1,6 +1,6 @@
-# Azure WebApp for Container 向け Ubuntu 18.04 と PHP7.2+PHP-FPM Dockerfile
+# Azure WebApp for Container 向け Ubuntu 18.04 と PHP7.2+PHP-FPM with Apache Dockerfile
 
-Azure WebApp for Containerで稼働するUbuntu 18.04ベース / Nginx / PHP FPM環境です。SSHでのAzureポータルからのログインも有効化しています。
+Azure WebApp for Containerで稼働するUbuntu 18.04ベース / Apache 2.4 Event / PHP FPM環境です。SSHでのAzureポータルからのログインも有効化しています。
 
 ## 開発環境
 私の環境では、Ubuntu 18.04のVMにDockerをインストールしたものになっています。
@@ -9,19 +9,19 @@ Azure WebApp for Containerで稼働するUbuntu 18.04ベース / Nginx / PHP FPM
 ## リポジトリのクローン
 
 ```
-git clone https://github.com/kazumihirose/AzWebAppConUbuntu1804PHP.git
+git clone https://github.com/kazumihirose/AzWebAppConUbuntu1804PHPApache.git
 ```
 
 ## Docker イメージの作成と作成の確認
 適当なタグをつけて、イメージをビルドしてください。
 
 ```
-$ cd AzWebAppConUbuntu1804PHP
-$ docker build --tag ubuntu1804_php72fpm_ssh .
+$ cd AzWebAppConUbuntu1804PHPApache
+$ docker build --tag ubuntu1804_php72fpm_ssh_apache .
 
 $ docker images
 REPOSITORY                          TAG                 IMAGE ID            CREATED             SIZE
-ubuntu1804_php72fpm_ssh             latest              4e6d858b3c79        3 hours ago         522MB
+ubuntu1804_php72fpm_ssh_apache             latest              4e6d858b3c79        3 hours ago         522MB
 ```
 
 ## Docker イメージを Azure Container Registry へPush する
